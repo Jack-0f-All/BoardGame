@@ -58,7 +58,7 @@ public class demo_Code {
     Board demo_board = new Board("Demo",s);
 
 
-    //System.out.println(demo_board);
+    System.out.println(demo_board);
 
 
 
@@ -76,7 +76,7 @@ public class demo_Code {
     
     // Roll the dice many times and update the count
     for (int i = 0; i < rolls; i++) {
-        int result = dice.roll();
+        int result = dice.rollForTotal();
         rollCount.put(result, rollCount.get(result) + 1);
     }
     

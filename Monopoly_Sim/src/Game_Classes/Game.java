@@ -1,11 +1,13 @@
 package Game_Classes;
 public class Game {
     public static void main(String[] args) throws Exception {
+        Player[] ALL_PLAYERS = new Player[]{
+            new Player("Tess"),
+            new Player("Ethan"),
+            new Player("Dandy")
+        };
         
-        Player pOne = new Player("Tess");
-        Player pTwo = new Player("Ethan");
-        Player pThree = new Player("Dandy");
-        Space demo = new Space("Demo","fake");
+        Dice dice = new Dice(2,6);
         Space[] monopolySpaces =  new Space[] {
             new Space("Go", "Other"),
             new Space("Mediterranean Avenue", "Brown"),
@@ -51,8 +53,28 @@ public class Game {
         Board board = new Board("Monopoly",  monopolySpaces);
 
 
-        System.out.println(board);
+        int turns = 200;
 
+
+        while(turns>0){
+
+            for(Player p:ALL_PLAYERS){
+                p.move(dice.rollForTotal());
+                board.update(p);
+            }
+
+            turns--;
+        }
+
+
+        board.printTotals();
+
+
+
+        // System.out.println(board);
+        // for(Player p:ALL_PLAYERS){
+        //     System.out.println(p);
+        // }
         /* 
         System.out.println(pOne);
         System.out.println(pTwo);

@@ -18,7 +18,7 @@ public class DiceTest {
         
         // Roll the dice many times and update the count
         for (int i = 0; i < rolls; i++) {
-            int result = dice.roll();
+            int result = dice.rollForTotal();
             rollCount.put(result, rollCount.get(result) + 1);
         }
         

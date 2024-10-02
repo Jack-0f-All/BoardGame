@@ -23,6 +23,28 @@ public class Board {
         name = n+"_"+numberOfBoards++;
     }
 
+    public void update(Player p){
+
+        if(p.getPosition()>board.length-1){
+            p.setPosition(p.getPosition()-board.length);
+        }
+
+        board[p.getPosition()].landedOn();
+
+
+    }
+
+    public void printTotals(){
+        System.out.printf("Total lands per space on %s", name);
+        System.out.println();
+
+        for(Space s:board){
+            System.out.printf("%s: %d%n",s.getName(),s.getTimesLanded());
+        }
+
+
+    }
+
 
     public String toString(){
 
