@@ -28,6 +28,9 @@ public class Player {
     public int getPosition(){
         return position;
     }
+    public String getName(){
+        return name;
+    }
 
     public String toString(){
         return "Name of player: " + name;

@@ -50,6 +50,7 @@ public class Game {
             new Space("Luxury Tax", "Other"),
             new Space("Boardwalk", "Dark Blue")
         };
+        
         Board board = new Board("Monopoly",  monopolySpaces);
 
 
