@@ -36,7 +36,9 @@ public class Board {
         if(p.getPosition()>board.length-1){
             p.setPosition(p.getPosition()-board.length);
         }
-
+        if(p.getPosition()==30){
+            p.setPosition(10);
+        }
         //increment number of lands on space
         board[p.getPosition()].landedOn();
 
