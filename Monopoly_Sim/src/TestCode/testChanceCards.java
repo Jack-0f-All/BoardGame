@@ -53,6 +53,17 @@ public class testChanceCards {
         
         Player pOne = new Player("Dummy");
 
+
+        
+
+        //runAllCards(board,pOne);
+        //advanceTo_test(board, pOne);
+        
+    }
+
+
+    public static void runAllCards(Board board, Player pOne){
+
         for(int i = 16; i>0;i--){
             pOne.setPosition(7);
             board.update(pOne);
@@ -64,5 +75,45 @@ public class testChanceCards {
             board.update(pOne);
             System.out.println();
         }
+    }
+
+
+    public static void advanceTo_test(Board b, Player p){
+        
+
+
+        //Change relevant methods in Board.java to public for tests to work.
+    
+        System.out.println("Testing advance to RR from Chance...\n");
+        p.setPosition(7);
+        System.out.println("Player position: "+p.getPosition());
+        b.advanceToRR(p);
+
+        p.setPosition(22);
+        System.out.println("\nPlayer position: "+p.getPosition());
+        b.advanceToRR(p);
+
+        p.setPosition(36);
+        System.out.println("\nPlayer position: "+p.getPosition());
+        b.advanceToRR(p);
+
+        System.out.println("________________________________________________________");
+
+
+        System.out.println("\nTesting advance to Utilities from Chance...");
+
+        p.setPosition(7);
+        System.out.println("\nPlayer position: "+p.getPosition());
+        b.advanceToUtility(p);
+
+        p.setPosition(22);
+        System.out.println("\nPlayer position: "+p.getPosition());
+        b.advanceToUtility(p);
+
+        p.setPosition(36);
+        System.out.println("\nPlayer position: "+p.getPosition());
+        b.advanceToUtility(p);
+
+        System.out.println("________________________________________________________\n\n");
     }
 }

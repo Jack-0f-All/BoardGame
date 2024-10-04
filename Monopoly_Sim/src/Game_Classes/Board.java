@@ -108,6 +108,8 @@ public class Board {
             p.setPosition(28);
         }
 
+        System.out.println("Advancing to Utility --> "+board[p.getPosition()].getName());
+
         
     }
     public void printTotals(){
