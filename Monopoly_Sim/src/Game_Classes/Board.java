@@ -122,9 +122,9 @@ public class Board {
         System.out.printf("%nTotal lands per space on %s", name);
         System.out.println("\n");
 
-        System.out.println("+----------------------------------------+");
+        System.out.println("+-----------------------------------------+");
         System.out.printf("|%-23s | %-5s | %-6s|%n", "Space Name", "Count", "Percent" );
-        System.out.println("+----------------------------------------+");
+        System.out.println("+-----------------------------------------+");
 
 
 
@@ -132,7 +132,7 @@ public class Board {
             System.out.printf("|%-23s | %-5d | %-6.2f%%|%n",s.getName(),s.getTimesLanded(),(s.getTimesLanded()/totalTurns)*100);
         }
 
-        System.out.println("+----------------------------------------+");
+        System.out.println("+-----------------------------------------+");
 
     }
 
