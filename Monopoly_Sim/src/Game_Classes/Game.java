@@ -1,12 +1,10 @@
 package Game_Classes;
 public class Game {
     public static void main(String[] args) throws Exception {
-        Player[] ALL_PLAYERS = new Player[]{
-            new Player("Tess"),
-            new Player("Ethan"),
+        Player[] ALL_PLAYERS = new Player[]{new Player("Tess"),new Player("Ethan"),
             new Player("Dandy")
         };
-        
+
         Dice dice = new Dice(2,6);
         Space[] monopolySpaces =  new Space[] {
             new Space("Go", "Other"),
@@ -50,18 +48,37 @@ public class Game {
             new Space("Luxury Tax", "Other"),
             new Space("Boardwalk", "Dark Blue")
         };
-        
-        Board board = new Board("Monopoly",  monopolySpaces);
-
-
         int turns = 200;
+        Board board = new Board("Monopoly",  monopolySpaces, turns);
+
+
+        
 
 
         while(turns>0){
 
             for(Player p:ALL_PLAYERS){
-                p.move(dice.rollForTotal());
-                board.update(p);
+                boolean goAgain;
+                do{
+                    goAgain = false;
+                    //Change this to track two dice roll
+                    int[] d = {dice.roll(), dice.roll()};
+
+                    if(d[1]==d[0]){
+                        p.rolledDouble();
+                        goAgain=true;
+                    }
+
+                    if(p.getDoublesRolled() == 3){
+                        p.setPosition(10);
+                        break;
+                    }
+                    else{
+                        p.move(d);
+                    }
+                    //p.move(dice.rollAll())
+                    board.update(p);
+                }while(goAgain);
             }
 
             turns--;
