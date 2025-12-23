@@ -1,8 +1,9 @@
 package TestCode;
 
 import Game_Classes.Board;
-import Game_Classes.Player;
+import Game_Classes.PlayerDemo;
 import Game_Classes.Space;
+
 
 public class testChanceCards {
      public static void main(String[] args) {
@@ -51,7 +52,7 @@ public class testChanceCards {
 
         Board board = new Board("Monopoly",  monopolySpaces);
         
-        Player pOne = new Player("Dummy");
+        PlayerDemo pOne = new PlayerDemo("Dummy");
 
 
         
@@ -62,7 +63,7 @@ public class testChanceCards {
     }
 
 
-    public static void runAllCards(Board board, Player pOne){
+    public static void runAllCards(Board board, PlayerDemo pOne){
 
         for(int i = 16; i>0;i--){
             pOne.setPosition(7);
@@ -78,7 +79,7 @@ public class testChanceCards {
     }
 
 
-    public static void advanceTo_test(Board b, Player p){
+    public static void advanceTo_test(Board b, PlayerDemo p){
         
 
 

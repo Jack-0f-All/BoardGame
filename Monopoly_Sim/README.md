@@ -1,18 +1,37 @@
-## Getting Started
+# Monopoly_Sim
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Textual Monopoly simulator implemented in Java. This project implements core Monopoly mechanics (dice, piece movement around the board, Chance and Community Chest cards, property ownership and basic transactions) with the goal of running large batches of simulated games and collecting statistics to determine which properties are most valuable or risky.
 
-## Folder Structure
+## Current status
+- Core simulation framework (textual only — no GUI).
+- Dice rolling and player movement around the board.
+- Handling of Chance and Community Chest cards (textual effects).
+- Property ownership, buying, and simple rent mechanics.
+- Logging of game events to produce post-game statistics.
 
-The workspace contains two folders by default, where:
+## Project goals
+Primary goal: run thousands of simulated games and aggregate results to answer questions such as:
+- Which properties are landed on most often?
+- Which properties give the best return on investment?
+- Which properties should be avoided?
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Longer-term goals:
+- Implement configurable AI player strategies (aggressive buyer, conservative buyer, trading behavior) and compare outcomes.
+- Add more detailed financial rules, auctions, trading, houses/hotels.
+- Produce exportable analytics (CSV/JSON) and visualizations outside the simulator.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Getting started
+- The code lives under `src/`. Dependencies (if any) are in `lib/`. Compiled output is typically produced in `bin/` by your build/run workflow.
+- Build and run using your preferred Java tooling (IDE run configuration or javac/java). Run the main simulation entry point (e.g., the project's main class) to start simulations.
+- Configure simulation parameters (number of games, number of players, random seed, player behaviors) via the provided configuration mechanism in code or command-line arguments (see the simulation main class for details).
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## Running large simulations and gathering results
+- Run the simulator repeatedly or in batch mode to collect aggregate statistics. The simulator emits textual logs and summary statistics; extend or adapt the exporter for CSV/JSON if you want to analyze results in spreadsheets or data tools.
+- Use different AI/player strategy implementations to compare outcomes across play styles.
 
-## Dependency Management
+## Contributing
+- Implementations, bug fixes, new player strategies, and analysis/export improvements are welcome.
+- Keep changes focused and add tests or reproducible runs for new behaviors.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Notes
+- This is a work-in-progress aiming for reproducible, large-scale text-based Monopoly simulations. No graphical UI is included or planned in the short term.

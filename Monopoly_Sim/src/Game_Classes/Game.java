@@ -54,7 +54,7 @@ public class Game {
         Board board = new Board("Monopoly",  monopolySpaces);
 
 
-        int turns = 200;
+        int turns = 400;
 
 
         while(turns>0){
